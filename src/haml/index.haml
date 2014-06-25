@@ -1,0 +1,57 @@
+!!!
+%html{lang: "ja", "xmlns:fb" => "http://ogp.me/ns/fb#"}
+  %head
+    %meta{charset: "UTF-8"}/
+    %title
+    %meta{content: "", name: "description"}/
+    %meta{content: "", name: "keywords"}/
+    %meta{content: "width=device-width", name: "viewport"}/
+    %meta{content: "", property: "og:title"}/
+    %meta{content: "article", property: "og:type"}/
+    %meta{content: "", property: "og:description"}/
+    %meta{content: "", property: "og:url"}/
+    %meta{content: "", property: "og:image"}/
+    %meta{content: "", property: "og:site_name"}/
+    %meta{content: "ja_JP", property: "og:locale"}/
+    %meta{content: "", property: "fb:app_id"}/
+    %meta{content: "", property: "article:publisher"}/
+    %meta{content: "summary", name: "twitter:card"}/
+    %meta{content: "@", name: "twitter:site"}/
+    %meta{content: "@", name: "twitter:creator"}/
+    %meta{content: "", name: "twitter:title"}/
+    %meta{content: "", name: "twitter:description"}/
+    %meta{content: "", name: "twitter:image"}/
+    %link{href: "https://plus.google.com/[id]", rel: "author"}/
+    %link{href: "img/favicon.ico", rel: "shortcut icon", type: "image/vnd.microsoft.icon"}/
+    %link{href: "", rel: "apple-touch-icon"}/
+    %link{href: "css/style.css", rel: "stylesheet"}/
+    %script{src: "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"}
+    :javascript
+      window.jQuery || document.write('<script src="js/libs/jquery-1.10.2.min.js"><\/script>')
+    %script{src: "//cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js"}
+    :javascript
+      window.Modernizr || document.write('<script src="js/libs/modernizr-2.7.1.js"><\/script>')
+    %script{src: "js/script.min.js"}
+    /[if IE]
+      <script src="js/libs/html5shiv.js"></script>
+      <script src="js/libs/css3-mediaqueries.js"></script>
+    :javascript
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+  %body
+    %like{action: "like", href: "https://developers.facebook.com/docs/plugins/", layout: "button_count", share: "false", show_faces: "false"}
+    #fb-root
+    :javascript
+      (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/ja_JP/all.js#xfbml=1";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
