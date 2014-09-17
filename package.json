@@ -10,7 +10,6 @@
     "grunt-contrib-connect": "~0.8.0",
     "grunt-contrib-htmlmin": "~0.3.0",
     "grunt-autoprefixer": "~0.7.6",
-    "grunt-image": "~0.7.1",
-    "grunt-contrib-haml": "~0.2.0"
+    "grunt-image": "~0.7.1"
   }
 }

@@ -8,9 +8,11 @@ module.exports = (grunt) ->
       options:
         removeComments: true
         collapseWhitespace: true
-
       files:
-        "<%= dist_dir %>index.html" : "<%= src_dir %>index.html"
+        expand : true
+        cwd : "<%= src_dir %>"
+        src: ["*.html"]
+        dest: "../html-template/"
 
     compass:
       normal:
@@ -29,18 +31,13 @@ module.exports = (grunt) ->
         src: "<%= src_dir %>js/application.js"
         dest: "js/script.min.js"
 
-    haml:
-      normal:
-        files:
-            "<%= src_dir %>index.html": "<%= src_dir %>haml/index.haml"
-
     watch:
       options:
         livereload: true
 
-      # html_files:
-      #   files: "<%= src_dir %>*.html"
-      #   tasks: "htmlmin"
+      html_files:
+        files: "<%= src_dir %>*.html"
+        tasks: "htmlmin"
 
       css_files:
         files: "<%= src_dir %>sass/*.scss"
@@ -49,10 +46,6 @@ module.exports = (grunt) ->
       js_files:
         files: "<%= src_dir %>js/*.js"
         tasks: "uglify"
-
-      haml_files:
-        files: "<%= src_dir %>haml/*.haml"
-        tasks: "haml"
 
     connect:
       site:
@@ -90,7 +83,6 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-contrib-uglify"
   grunt.loadNpmTasks "grunt-contrib-watch"
   grunt.loadNpmTasks "grunt-image"
-  grunt.loadNpmTasks "grunt-contrib-haml"
 
   grunt.registerTask "build", [
     "htmlmin"
