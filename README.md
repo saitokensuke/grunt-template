@@ -21,13 +21,12 @@ $ npm install
  │ ├[libs]
  │ └script.min.js
  ├[node_modules]
- ├[src] #下記を参照
  ├Gruntfile.coffee
- └package.json
+ ├package.json
+ └[src] #下記を参照
 
 -[src]
- ├[haml]
- │ └index.haml
+ ├index.html
  ├[img]
  │ ├[sprite]
  │ └sprite-hogehoge.png
@@ -56,10 +55,9 @@ $ npm install
 `connect`でサーバーが立ち上がる
 
 `watch`で
-`livereload`
 `compass`
 `uglify`
-`haml`
+`htmlmin`
 が実行される
 
 ### grunt build
@@ -77,11 +75,9 @@ $ npm install
 
 ## フロー
 
-#### haml
+#### htmlmin
 
 ```
-/src/haml/index.haml
-↓haml
 /src/index.html
 ↓htmlmin
 /index.html
